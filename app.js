@@ -6,7 +6,11 @@ let addBtn = document.getElementById('addBtn')
 addBtn.addEventListener('click', function (e) {
   let addTxt = document.getElementById('addTxt')
   let notes = localStorage.getItem('notes')
-
+      // Adding check on empty text values 
+  if (addTxt.value.length==0) {
+        alert("Please fill all the fields!!");
+        return;
+    }
   if (notes == null) {
     notesObj = []
   } else {
